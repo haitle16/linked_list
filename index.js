@@ -2,21 +2,23 @@
 let LL = require('./lib/ll.js');
 let fs = require('fs');
 
-let list = new LL();
+
+
+let list1 = new LL();
 let initialValue = 'First One';
 let initialValue2 = 'Second One';
 let initialValue3 = 'Third One';
 let newValue = 'Fourth One';
 let anotherOne = 'Fifth One';
 
-list.prepend(initialValue);
-list.prepend(initialValue2);
-list.prepend(initialValue3);
-list.prepend(newValue);
-list.prepend(anotherOne);
+list1.prepend(initialValue);
+list1.prepend(initialValue2);
+list1.prepend(initialValue3);
+list1.prepend(newValue);
+list1.prepend(anotherOne);
 
-console.log(list.head);
-console.log(list.head.value);
+console.log(list1.head);
+// console.log(list1.head.value);
 let initialValue4 = 'ORIGINAL One';
 let initialValue5 = 'Last One';
 
@@ -43,14 +45,21 @@ list2.append(value4);
 list2.append(value5);
 
 console.log(list2.head);
-console.log(list2.head.next.next.next.next == list2.head);
+console.log(!!list2.head.next.next.next.next.next);
 console.log(!!list2.head);
 
-let newList = new LL();
-newList.ll_merge(list, list2);
+console.log('XXXXXXXXXXXXXX');
 
-console.log(newList);
-// console.log(list.head);
+
+list1.ll_merge(list1, list2);
+
+console.log(list1.head);
+console.log(list1.head.next.next);
+console.log(list1.head.next.next.next.next);
+console.log(list1.head.next.next.next.next.next.next);
+console.log(list1.head.next.next.next.next.next.next.next.next);
+// console.log(list2);
+// console.log(list1.head);
 
 
 
